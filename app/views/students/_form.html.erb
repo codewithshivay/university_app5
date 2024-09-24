@@ -35,6 +35,18 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="file-field input-field col s6">
+                                <div class="btn">
+                                    <span>Upload Profile</span>
+                                    <%= f.file_field :profile %>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Upload your profile picture">
+                                </div>
+                            </div>
+                        </div>
+
                          <div class= "row">
                             <div class= "input-field col s12">
                                 <%= f.button(@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign up'.html_safe : '<i class="material-icons right">arrow_forward</i>Submit Changes'.html_safe, class: "btn waves-effect waves-light") %>
