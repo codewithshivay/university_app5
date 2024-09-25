@@ -5,6 +5,8 @@
 
                 <% if @student.profile.attached? %>
                     <%= image_tag url_for(@student.profile), class: "circle responsive-img right", style: "width: 100px; height: 100px;" %>
+                <% else %>
+                    <%= image_tag "default_user_icon.png", class: "circle responsive-img right", style: "width: 50px; height: 50px;" %>
                 <% end %>
 
                 <span class="card-title">Name : <%= @student.name %></span>
