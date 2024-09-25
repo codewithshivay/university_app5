@@ -44,6 +44,7 @@
                 <li><%= link_to 'Courses', root_path %></li>
                 <% if logged_in? %>
                    <li><%= link_to 'Students', students_path %></li>
+                   <li><%= link_to 'My Courses', mycourse_path %></li>
                 <% end %>
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>

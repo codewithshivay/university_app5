@@ -39,6 +39,10 @@ class StudentsController < ApplicationController
         end
     end
 
+    def mycourse
+        @mycourses = current_user.courses
+    end
+
     private
 
     def set_student
