@@ -20,13 +20,13 @@
                         </div>
 
                          <div class= "row">
-                            <div class= "input-field col s12">
-                                <%= f.button '<i class="material-icons right">arrow_forward</i>Log in'.html_safe, class: "btn waves-effect waves-light" %>
+                            <div class= "input-field col s3">
+                                <%= f.button '<i class="material-icons right">arrow_forward</i>Log in'.html_safe, class: "btn waves-effect waves-light left" %>
                             </div>
+                            <%= link_to 'Sign up', new_student_path, class: "btn waves-effect waves-light right" %>
                         </div>
-                        <p>Don't have an account ?</p>
-                        <%= link_to 'Sign up', new_student_path, class: "btn waves-effect waves-light" %>
                     <% end %>
+                    <%= link_to 'Forgot Password ?', new_password_path %>
                 </div>
             </div>
         </div>

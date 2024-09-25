@@ -8,4 +8,13 @@ Rails.application.routes.draw do
   delete 'logout', to: 'logins#destroy'
   post 'course_enroll', to: 'student_courses#create'
   get 'courses/search', to: 'courses#search'
+
+  resources :passwords, only: [:new, :create] do
+    collection do
+      get 'enter_otp'
+      post 'verify_otp'
+      get 'reset_password'
+    end
+  end
+  
 end

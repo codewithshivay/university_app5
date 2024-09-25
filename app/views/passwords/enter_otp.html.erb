@@ -1,0 +1,14 @@
+<h1 class="center-align">Enter OTP</h1>
+
+<%= form_tag verify_otp_passwords_path, method: :post, class: "col s12" do %>
+  <div class="row">
+    <div class="input-field col s12 m8 offset-m2">
+      <%= text_field_tag 'otp', nil, id: 'otp', class: "validate" %>
+      <%= label_tag 'otp', 'Enter OTP', for: 'otp' %>
+    </div>
+  </div>
+
+  <div class="row center-align">
+    <%= submit_tag "Verify OTP", class: "btn waves-effect waves-light" %>
+  </div>
+<% end %>
