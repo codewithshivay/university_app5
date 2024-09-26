@@ -10,4 +10,5 @@ class Student < ApplicationRecord
 	has_many :student_courses
 	has_many :courses, through: :student_courses
 	has_one_attached :profile
+	has_many :reviews
 end
