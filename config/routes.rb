@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   post 'courses/like', to: 'likes#create'
   delete 'courses/dislike', to: 'likes#destroy'
 
+  resources :courses, only: [:show] do
+    resources :reviews, only: [:create]
+  end
+
 end
