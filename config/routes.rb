@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   end
   
   get 'mycourse', to: 'students#mycourse'
+  post 'courses/like', to: 'likes#create'
+  delete 'courses/dislike', to: 'likes#destroy'
 
 end

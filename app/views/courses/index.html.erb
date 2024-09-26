@@ -28,10 +28,22 @@
                     <p><%= course.description %></p>
                 </div>
                 <div class="card-action">
-                    <% if logged_in? && !(current_user.courses.include?(course)) %>
-                        <%= link_to "Enroll", course_enroll_path(course_id: course.id), method: :post %>
-                    <% end %>
-                    <a href="#">Info</a>
+                  <% if logged_in? && !(current_user.courses.include?(course)) %>
+                      <%= link_to "Enroll", course_enroll_path(course_id: course.id), method: :post %>
+                  <% end %>
+                  <a href="#">Info</a>
+                  <% if logged_in? %>
+                    <div class="likes-section">
+                      <% if course.likes.exists?(student_id: current_user.id) %>
+                        <span class="white-text"><%= course.likes.count %></span>
+                        <%= link_to ' Liked', courses_dislike_path(course_id: course.id), method: :delete, class: 'text-white' %>
+                      <% else %>
+                        <span class="text-white"><%= course.likes.count %></span>
+                        <%= link_to ' Like', courses_like_path(course_id: course.id), method: :post, class: 'text-white' %>
+                      <% end %>
+                    </div>
+                  <% end%>
+
                 </div>
             </div>
         </div>
