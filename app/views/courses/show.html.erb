@@ -8,6 +8,12 @@
             <div class="card-action">
                 <% if !(logged_in?) %>
                     <span class="white-text"><%= @course.likes.count %> Likes</span>
+                    <%= link_to 'Login or Signup For Seeing The Lectures', login_path, class: "right"%>
+                <% end %>
+                <% if logged_in? %>
+                    <% if @course.video.present? %>
+                        <%= link_to "See Video", video_path(@course.video) %>
+                    <% end %>
                 <% end %>
 
                 <div class="card-body">
