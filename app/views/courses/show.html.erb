@@ -11,8 +11,12 @@
                     <%= link_to 'Login or Signup For Seeing The Lectures', login_path, class: "right"%>
                 <% end %>
                 <% if logged_in? %>
-                    <% if @course.video.present? %>
-                        <%= link_to "See Video", video_path(@course.video) %>
+                    <% if (current_user.courses.include?(@course)) %>
+                        <% if @course.video.present? %>
+                            <%= link_to "See Video", video_path(@course.video) %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to "Enroll To See Lecture", course_enroll_path(course_id: @course.id), method: :post %>
                     <% end %>
                 <% end %>
 
